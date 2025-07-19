@@ -34,7 +34,7 @@ const ItemList: React.FC = () => {
   return (
     <div style={{ maxWidth: 600, margin: 'auto' }}>
       <h1>Items List</h1>
-      <Link to="/items/new">
+      <Link to="/items/create">
         <button style={{ marginBottom: '1rem' }}>Add New Item</button>
       </Link>
       {items.length === 0 ? (
