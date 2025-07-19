@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const ItemForm: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // id is a string or undefined
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
@@ -11,7 +11,6 @@ const ItemForm: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      // Fetch item data for editing
       fetch(`http://localhost:3000/items/${id}`)
         .then(res => {
           if (!res.ok) throw new Error('Failed to fetch item');
@@ -34,7 +33,7 @@ const ItemForm: React.FC = () => {
     }
 
     try {
-      const method = id ? 'PUT' : 'POST'; // PUT for update, POST for new
+      const method = id ? 'PUT' : 'POST'; 
       const url = id
         ? `http://localhost:3000/items/${id}`
         : 'http://localhost:3000/items';
